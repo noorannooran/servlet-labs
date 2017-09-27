@@ -28,6 +28,14 @@ public class CreditCard extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String help = request.getParameter("help");
+		if(help!= null)
+		{
+			response.sendRedirect("/servletlabs/Helper");
+		}
+		String submit = request.getParameter("submit");
+		if(submit!=null)
+		{
 		//get parameters from POST form
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
@@ -69,4 +77,5 @@ public class CreditCard extends HttpServlet {
 		}
 
 }
+	}
 }
